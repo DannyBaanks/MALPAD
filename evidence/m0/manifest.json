@@ -1,0 +1,34 @@
+{
+  "project": "MALPAD",
+  "milestone": "M0",
+  "date": "2026-08-30",
+  "protocol_version": "MALPAD-PROTOCOL/1",
+  "gates": {
+    "PROTOCOL_FROZEN": true,
+    "STATE_MODEL_FROZEN": true,
+    "HOST_BOUNDARY_EXPLICIT": true
+  },
+  "tests_passed": 18,
+  "oracle": "tools/editor_ir.py (construction-time contract oracle; NOT the shipping editor logic)",
+  "files": {
+    "docs/PROTOCOL.md": "4f1fff11b69739f0e149c778c6bd7b7100defa4bdb6c2e6ce4741c447d382909",
+    "docs/STATE_MODEL.md": "e19cdd1e2f49cefe2e9f577d8e38fe00c94fbd5fdf11f9852c28c98d3d46edfb",
+    "docs/HOST_BOUNDARY.md": "646cb6e909d264fcf76644cdcd982332b92959c592f9f7175c6ff688cf3f81e7",
+    "tools/editor_ir.py": "12b27c120a7bf8b9ab2d636be60b898f1fcf998a8e6ea6c3659c8006ddea3d18",
+    "tests/test_contract.py": "b0e09d3c71b488f8e27dfc20f5cde8f5d49929bf5235dad2269eef438705aa3a",
+    "tests\\fixtures\\expected\\arrows_clamp.events.txt": "bbce8406bef1c0ffa207e9781eae0b02007d2a1ee763fb9601cda43b2392e446",
+    "tests\\fixtures\\expected\\backspace_clamp.events.txt": "0c145baf383b0081f3d27df4d0fd8f9a2a36d017f6c5a5df3d82a5effc039f51",
+    "tests\\fixtures\\expected\\demo.events.txt": "1772227290c03684abbd489b028a7afb387da2fcfe4c98a3ee51ceefd24e886f",
+    "tests\\fixtures\\expected\\quit_only.events.txt": "44629b37a083228a18e1c6c6f3d9ed959e00c9a9b414c5ced1338892635676a7",
+    "tests\\fixtures\\expected\\save_denied.events.txt": "97e58c277ab8b046ae1aeb0874e51a81d737ef2518d1fe9db1d0c97119260d82",
+    "tests\\fixtures\\expected\\save_error.events.txt": "4c718d1c7c6dcd37704bf5d1ec6458c9e051fc89ddb9c9f02504bcf6ca493f7f",
+    "tests\\fixtures\\expected\\simple.events.txt": "be0f1335ccae16d244d00aa033c4f9dbb458b6d0e3614f9293e5eeb33d0920c2",
+    "tests\\fixtures\\keystrokes\\arrows_clamp.keys.bin": "acb69a1b7e3efebab2cc88c451ec9e1680a3881663cd953fa2a171f8aa638c11",
+    "tests\\fixtures\\keystrokes\\backspace_clamp.keys.bin": "f043ba2f93ed4c022b275297a1ff532a8f5553709fd36662d1200c09c09f1e27",
+    "tests\\fixtures\\keystrokes\\demo.keys.bin": "61949f83f00185b9d3ebf1b4e8844f0e45d3cbd6b9397db678a210133df38ac0",
+    "tests\\fixtures\\keystrokes\\quit_only.keys.bin": "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e71",
+    "tests\\fixtures\\keystrokes\\save_denied.keys.bin": "5996b0441ef1e9b11876040963c9d3409ede97bf367ebe5e84e73cd48d793ce5",
+    "tests\\fixtures\\keystrokes\\save_error.keys.bin": "cc9fa81cdf10fdaf24c593f7d38829ab81d265876ab09af847b035606eb96262",
+    "tests\\fixtures\\keystrokes\\simple.keys.bin": "ee8cee279fd6ff89f6ca8d21e2dd206c7322a18eaed76696b509364dfcc770d7"
+  }
+}
