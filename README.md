@@ -34,6 +34,16 @@ materializes explicitly requested host capabilities.
   beyond practical reach. Closing M3 requires building the **IR→Malbolge
   compiler** (multi-session sub-project, roadmap §8/§9). See
   `evidence/m3_buffer/GATES.md`.
+- **M4** (logical render): **DEMONSTRATED**. Terminal model consumes `@MALPAD:`
+  events from a neutral boundary; presentation-only (CHAR edit ops never mutate
+  the model). `evidence/m45_render/GATES.md`.
+- **M5** (ANSI adapter): **DEMONSTRATED**. model → ANSI, deterministic,
+  backend-independent (oracle/fixture/specimen indistinguishable).
+- **M7** (save authority seam): **DEMONSTRATED**. Core emits save REQUEST only;
+  host adapter owns write authority (policy → write/deny/error), truthful
+  receipts. `SAVE capability != SAVE authority`. `evidence/m7_save/GATES.md`.
+
+Full honest dashboard: `MALPAD_STATUS.md`.
 
 ## Core contract (frozen)
 

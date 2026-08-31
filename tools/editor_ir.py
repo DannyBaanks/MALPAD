@@ -85,6 +85,11 @@ def step(st: EditorState, b: int) -> List[str]:
             st.buffer.insert(st.cursor, b)
             st.cursor += 1
             out.append(f"@MALPAD:CHAR:{b}")
+            # M4 render-protocol: the core decides what to draw — it redraws the
+            # full edited line + cursor after every mutation, so the renderer
+            # only presents state (never re-derives editing).
+            out.append(f"@MALPAD:LINE:0:{bytes(st.buffer).decode('ascii','replace')}")
+            out.append(f"@MALPAD:MOVE:{st.cursor}:0")
         else:
             out.append("@MALPAD:STATUS:buffer-full")
             out.append("@MALPAD:ERR:BUFFER_FULL")

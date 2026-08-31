@@ -70,6 +70,13 @@ followed by `\n`.
 `BOOT`, `CLEAR`, `CHAR`, `MOVE`, `LINE`, `STATUS`, `SAVE`, `SAVED`,
 `SAVE_DENIED`, `SAVE_ERROR`, `QUIT`, `ERR`.
 
+> **Render redraw (M4 refinement).** After every buffer mutation the core emits a
+> full `LINE:<row>:<text>` redraw of the edited line plus a `MOVE:<col>:<row>`
+> cursor directive, so the renderer only *presents* state and never re-derives
+> editing. `CHAR` remains the edit-op signal; the renderer displays what the
+> `LINE`/`MOVE` directives say. Logical editor semantics (buffer/cursor/state)
+> are unaffected by this presentation addition.
+
 ### 3.2 Frames the adapter only ever receives
 
 All of the above. The adapter never emits `@MALPAD:` frames to the core; the
