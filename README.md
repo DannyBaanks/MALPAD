@@ -14,8 +14,13 @@ materializes explicitly requested host capabilities.
 
 ## Status
 
-M0 (contracts frozen) — `PROTOCOL_FROZEN`, `STATE_MODEL_FROZEN`,
-`HOST_BOUNDARY_EXPLICIT`. See `ROADMAP_MALPAD.md` for the full plan.
+- **M0** (contracts frozen): `PROTOCOL_FROZEN`, `STATE_MODEL_FROZEN`,
+  `HOST_BOUNDARY_EXPLICIT`.
+- **M1** (echo loop): **PARTIAL**. Echo loop demonstrated on 2 independent
+  backends (Malbolge-Engine C + malbolge-oracle): A→A, ABC→ABC, HELLO→HELLO.
+  Empty input → clean halt on engine. **Quit-on-specific-sentinel is
+  NOT_DEMONSTRATED** (the program halts at EOF, not on a specific byte — the
+  input-branching hard case is M2/M3). See `evidence/m1_echo/GATES.md`.
 
 ## Core contract (frozen)
 

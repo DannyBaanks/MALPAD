@@ -30,7 +30,23 @@ Salida real (última línea):
 
 ```
 ..................                                                       [100%]
-18 passed in 0.35s
+23 passed in 0.60s
+```
+
+### Ver el echo de Malbolge en dos intérpretes independientes
+
+El programa `evidence\m1_echo\program.mal` es un *cat* clásico de Malbolge.
+Aliméntalo con input y observa el echo:
+
+```powershell
+py -m pytest tests\test_m1_echo.py -q
+```
+
+Salida real:
+
+```
+.............                                                       [100%]
+5 passed in 0.60s
 ```
 
 ### Ver el flujo de eventos del demo (el oracle de contrato)
