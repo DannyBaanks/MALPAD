@@ -29,10 +29,21 @@ jala").
 > A Malbolge program that REMEMBERS it received A when processing the next
 > input. Requires persistent mutable state (mutable_cell_load/store).
 
-The compiler builds the plan for STATE TEST #1 and correctly reports it is
-blocked on `mutable_cell_store` / `mutable_cell_load` (NOT_DEMONSTRATED). It
-does NOT emit a fake counter. This is the honest front of the M3 wall,
-expressed as code.
+### Attempt result (2026-08-30)
+
+- **Input-driven primitive: GENUINELY DEMONSTRATED.** Autobolge
+  `relational.synthesize` produced a Malbolge program (`input_driven.mal` =
+  `"ub"`) that READS input and whose output depends on it:
+  `"XY"→"X"`, `"AY"→"A"`, `"BY"→"B"`. Verified cross-backend (oracle + engine).
+- **Memory primitive (mutable_cell): NOT_DEMONSTRATED.** Attempted the reverse
+  test (input `"AB"` → output `"BA"`, requiring store-then-retrieve across
+  inputs). The synthesizer FAILED (produced only `"B"`). No program exists that
+  stores a value across inputs and reproduces it later.
+
+The compiler builds the plan for STATE TEST #1 and correctly reports it blocked
+on `mutable_cell_store` / `mutable_cell_load` (NOT_DEMONSTRATED). It does NOT
+emit a fake counter. This is the honest front of the M3 wall, now confirmed by
+*attempted synthesis* (not only by inventory).
 
 ## The law the compiler enforces
 

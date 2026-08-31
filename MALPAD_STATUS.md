@@ -13,7 +13,7 @@ own gate and status.
 | M5 | ANSI adapter | **DEMONSTRATED** | model → ANSI, deterministic, backend-independent |
 | M7 | save authority seam | **DEMONSTRATED** | request vs authority separated; write/deny/fail + receipts |
 | Bridge | Python body ↔ Malbolge brain | **DEMONSTRATED (transport)** | generated Malbolge emits @MALPAD: frames, parsed → model → ANSI, backend-independent |
-| Compiler | IR→Malbolge lowering pipeline | **FRAMEWORK PRESENT / STATE NOT_DEMONSTRATED** | lowers read/emit/halt; refuses to emit unproven stateful primitives; STATE TEST #1 blocked on mutable_cell |
+| Compiler | IR→Malbolge lowering pipeline | **FRAMEWORK PRESENT / STATE NOT_DEMONSTRATED** | lowers read/emit/halt; refuses to emit unproven stateful primitives; input-driven primitive DEMONSTRATED (synthesized, cross-backend); mutable_cell memory NOT_DEMONSTRATED (reverse test failed) |
 
 ## Architecture (reframe)
 
@@ -52,5 +52,5 @@ See `docs/IR_TO_MALBOLGE_COMPILER_SCOPE.md`.
 
 ## Test suite
 
-`py -m pytest tests -q` → **52 passed** (M0 18, M1 5, M2 4, M4/M5 6, M7 6,
-bridge 4, compiler 9).
+`py -m pytest tests -q` → **54 passed** (M0 18, M1 5, M2 4, M4/M5 6, M7 6,
+bridge 4, compiler 9, mutable_cell 2).
