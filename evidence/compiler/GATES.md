@@ -31,14 +31,15 @@ jala").
 
 ### Attempt result (2026-08-30)
 
-- **Input-driven primitive: GENUINELY DEMONSTRATED.** Autobolge
-  `relational.synthesize` produced a Malbolge program (`input_driven.mal` =
-  `"ub"`) that READS input and whose output depends on it:
-  `"XY"→"X"`, `"AY"→"A"`, `"BY"→"B"`. Verified cross-backend (oracle + engine).
-- **Memory primitive (mutable_cell): NOT_DEMONSTRATED.** Attempted the reverse
-  test (input `"AB"` → output `"BA"`, requiring store-then-retrieve across
-  inputs). The synthesizer FAILED (produced only `"B"`). No program exists that
-  stores a value across inputs and reproduces it later.
+- **Sequential multi-input processing: DEMONSTRATED.** Autobolge
+  `relational.synthesize` produced Malbolge programs that read N inputs and
+  output a chosen position: `first_char.mal` (`ub`, AB→A), `second_char.mal`
+  (`uta`, AB→B, XY→Y), and a transient third-char program. All cross-backend
+  (oracle + engine) and cross-input verified.
+- **Memory primitive (mutable_cell): NOT_DEMONSTRATED.** The reverse test
+  (input `"AB"` → output `"BA"`, requiring store-then-retrieve across inputs)
+  FAILED on all seeds/budgets tried. The synthesizer can do sequential reads
+  but not persistent out-of-order storage.
 
 The compiler builds the plan for STATE TEST #1 and correctly reports it blocked
 on `mutable_cell_store` / `mutable_cell_load` (NOT_DEMONSTRATED). It does NOT

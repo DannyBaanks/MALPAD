@@ -55,6 +55,17 @@ def test_input_driven_program_cross_backend():
         assert re_["output"] == exp, f"engine input {inp}: {re_['output']!r}"
 
 
+def test_second_char_program_cross_backend():
+    p = ROOT / "evidence" / "mutable_cell" / "second_char.mal"
+    if not p.exists():
+        pytest.skip("second-char program not present")
+    for inp, exp in (("AB", "B"), ("XY", "Y")):
+        ro = _oracle(inp, prog=p.read_text(encoding="utf-8").strip())
+        re_ = _engine(inp, prog=p.read_text(encoding="utf-8").strip())
+        assert ro.output == exp, f"oracle {inp}: {ro.output!r}"
+        assert re_["output"] == exp, f"engine {inp}: {re_['output']!r}"
+
+
 def test_memory_reverse_not_demonstrated():
     # The reverse test (input "AB" -> output "BA") requires persistent memory.
     # We attempted it with the synthesizer and it failed. This test records that
