@@ -27,6 +27,13 @@ materializes explicitly requested host capabilities.
   state machine (cursor+buffer+6-way dispatch) is NOT_DEMONSTRATED** — it needs
   an IR→Malbolge compiler for stateful input-branching programs. Frozen target:
   `tests/editor_state_vectors.json`. See `evidence/m2_state/GATES.md`.
+- **M3** (single-line editable buffer): **NOT_DEMONSTRATED**. The wall is real
+  and reported honestly: no existing stateful input-branching Malbolge program
+  exists to source, no generator/compiler produces mutable state machines (the
+  `malbolge-generator` emits text-output programs only), and hand-writing it is
+  beyond practical reach. Closing M3 requires building the **IR→Malbolge
+  compiler** (multi-session sub-project, roadmap §8/§9). See
+  `evidence/m3_buffer/GATES.md`.
 
 ## Core contract (frozen)
 
