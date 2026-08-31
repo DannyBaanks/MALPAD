@@ -12,6 +12,14 @@ own gate and status.
 | M4 | logical render | **DEMONSTRATED** | terminal model from @MALPAD: events, presentation-only |
 | M5 | ANSI adapter | **DEMONSTRATED** | model → ANSI, deterministic, backend-independent |
 | M7 | save authority seam | **DEMONSTRATED** | request vs authority separated; write/deny/fail + receipts |
+| Bridge | Python body ↔ Malbolge brain | **DEMONSTRATED (transport)** | generated Malbolge emits @MALPAD: frames, parsed → model → ANSI, backend-independent |
+
+## Architecture (reframe)
+
+Python is the **body**; Malbolge is the **editor brain**; the byte protocol is
+the cable. Python MAY translate `VK_LEFT → LEFT`, NEVER `LEFT → cursor--`.
+See `docs/MALPAD_ARCHITECTURE.md`. Win32 is a rear problem (M10); the bridge
++ M4/M5/M7 already define the boundary any frontend connects to.
 
 ## Compiler (future)
 
@@ -43,4 +51,5 @@ See `docs/IR_TO_MALBOLGE_COMPILER_SCOPE.md`.
 
 ## Test suite
 
-`py -m pytest tests -q` → **39 passed** (M0 18, M1 5, M2 4, M4/M5 6, M7 6).
+`py -m pytest tests -q` → **43 passed** (M0 18, M1 5, M2 4, M4/M5 6, M7 6,
+bridge 4).

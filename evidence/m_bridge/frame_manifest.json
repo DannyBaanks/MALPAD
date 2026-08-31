@@ -1,0 +1,15 @@
+{
+  "original": "@MALPAD:STATUS:READY\n@MALPAD:QUIT\n",
+  "processed": "@MALPAD:STATUS:READY\n@MALPAD:QUIT\n",
+  "words": 1,
+  "anchors": [
+    "default"
+  ],
+  "opcodes": 1068,
+  "stats": {
+    "words": 1,
+    "evaluations": 52174,
+    "duration_s": 2.6012393,
+    "anchors_used": 1
+  }
+}

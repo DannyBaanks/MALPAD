@@ -1,0 +1,8 @@
+{
+  "index": 0,
+  "word": "@MALPAD:STATUS:READY\n@MALPAD:QUIT\n",
+  "opcodes": "ioooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooop*oopop*o**pp*ppp*ppoooop*p*ppop*opo**ooooo*ppp*opop*p**op*pp*ppoppop*pppoppp*pp*ooopo*oo***oopopo*pppoo*ppo<**opoo*popp<p*o*pp*pop*poopp**o**oo*o*pp***pp**po*poooop*oo*o*popppp***ooopppp*p**o*o*pppooopopppp**o**p<ppop**ppo**ppppp<*op*o*pp***p**o*oooop<oopp*po*opp<*ppp***ppo*o*oppp<*opop*p***p*ppo*p*pp*opo***oppopo*oop**ooo*pp*p**popoop****o*pp<o*p<opoop<*pp***o*pp*p*p*opopo*p*p***oop***oop*p<pppp*poopp**ooo*oooppop<opoop<p*pop*ppp<po*oop*opp**p*pp*poooop*oo****op<*op<*opo**oo*o*ooo*p<p****ppop<ooppopoop*****oo**po*oopo*p*o*po****pp**op*o*opo***popooo*p**popo*ppo**ppo*oo**opp*op*pop*oopop<p*o*p*oooop<o**o*pooo**pop***ppopp<p*oopop*pop**popo*op*oo**opp****pp*pp**pp**p*o**op*popo*ppp<p<poopp<*oop*popp*opppo**p*p<p*oop*opppppoopp*o*oopo*p*p*p*ooppp<ppoooo****o*po**popo*ppp*p*op*opo***o*o*o****popo*pp*ppp*po*oo*po*po*oopoo*pp<opp*pp**op*opppooo*opop*p*ooo*o*o*po***o*op*opoppop<ppoop<o*p*op*po*op*ppp<p***o*oppp<ppp***poopp<**opp*oppoo**oo*op*oo*oooop<poopp<v",
+  "anchor": "default",
+  "from_bank": false,
+  "success": true
+}
