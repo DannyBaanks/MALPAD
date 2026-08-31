@@ -1,0 +1,177 @@
+{
+  "schema": "malpad.editor_state_vectors.v1",
+  "date": "2026-08-30",
+  "oracle": "tools/editor_io_ir.py (M0 frozen contract; target for the Malbolge specimen)",
+  "note": "These are the logical editor semantics the future Malbolge specimen must reproduce; the Malbolge specimen never self-validates (checked on independent interpreters).",
+  "vectors": [
+    {
+      "name": "demo",
+      "input_hex": "48454c4c4f111108410a4d414c424f4c4745174104",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:72",
+        "@MALPAD:CHAR:69",
+        "@MALPAD:CHAR:76",
+        "@MALPAD:CHAR:76",
+        "@MALPAD:CHAR:79",
+        "@MALPAD:MOVE:4:0",
+        "@MALPAD:MOVE:3:0",
+        "@MALPAD:LINE:0:HELO",
+        "@MALPAD:MOVE:2:0",
+        "@MALPAD:CHAR:65",
+        "@MALPAD:STATUS:single-line",
+        "@MALPAD:CHAR:77",
+        "@MALPAD:CHAR:65",
+        "@MALPAD:CHAR:76",
+        "@MALPAD:CHAR:66",
+        "@MALPAD:CHAR:79",
+        "@MALPAD:CHAR:76",
+        "@MALPAD:CHAR:71",
+        "@MALPAD:CHAR:69",
+        "@MALPAD:SAVE",
+        "@MALPAD:SAVED",
+        "@MALPAD:STATUS:saved",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "HEAMALBOLGELO",
+        "buffer_len": 13,
+        "cursor": 11,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "insert",
+      "input_hex": "4142115804",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:65",
+        "@MALPAD:CHAR:66",
+        "@MALPAD:MOVE:1:0",
+        "@MALPAD:CHAR:88",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "AXB",
+        "buffer_len": 3,
+        "cursor": 2,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "left_right",
+      "input_hex": "414211111204",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:65",
+        "@MALPAD:CHAR:66",
+        "@MALPAD:MOVE:1:0",
+        "@MALPAD:MOVE:0:0",
+        "@MALPAD:MOVE:1:0",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "AB",
+        "buffer_len": 2,
+        "cursor": 1,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "backspace",
+      "input_hex": "414243110804",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:65",
+        "@MALPAD:CHAR:66",
+        "@MALPAD:CHAR:67",
+        "@MALPAD:MOVE:2:0",
+        "@MALPAD:LINE:0:AC",
+        "@MALPAD:MOVE:1:0",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "AC",
+        "buffer_len": 2,
+        "cursor": 1,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "backspace_start",
+      "input_hex": "0804",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:LINE:0:",
+        "@MALPAD:MOVE:0:0",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "",
+        "buffer_len": 0,
+        "cursor": 0,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "save_denied",
+      "input_hex": "4849174404",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:72",
+        "@MALPAD:CHAR:73",
+        "@MALPAD:SAVE",
+        "@MALPAD:SAVE_DENIED",
+        "@MALPAD:STATUS:denied",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "HI",
+        "buffer_len": 2,
+        "cursor": 2,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "save_error",
+      "input_hex": "4849174504",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:CHAR:72",
+        "@MALPAD:CHAR:73",
+        "@MALPAD:SAVE",
+        "@MALPAD:SAVE_ERROR",
+        "@MALPAD:STATUS:error",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "HI",
+        "buffer_len": 2,
+        "cursor": 2,
+        "row": 0,
+        "state": "HALTED"
+      }
+    },
+    {
+      "name": "quit",
+      "input_hex": "04",
+      "events": [
+        "@MALPAD:BOOT",
+        "@MALPAD:QUIT"
+      ],
+      "final": {
+        "buffer": "",
+        "buffer_len": 0,
+        "cursor": 0,
+        "row": 0,
+        "state": "HALTED"
+      }
+    }
+  ]
+}

@@ -21,6 +21,12 @@ materializes explicitly requested host capabilities.
   Empty input → clean halt on engine. **Quit-on-specific-sentinel is
   NOT_DEMONSTRATED** (the program halts at EOF, not on a specific byte — the
   input-branching hard case is M2/M3). See `evidence/m1_echo/GATES.md`.
+- **M2** (state/cursor): **PARTIAL**. The **input-branching primitive is
+  DEMONSTRATED** via a Malbolge truth-machine on 2 independent backends (input
+  `'0'` → halt, `'1'` → loop, identical on engine + oracle). The **full editor
+  state machine (cursor+buffer+6-way dispatch) is NOT_DEMONSTRATED** — it needs
+  an IR→Malbolge compiler for stateful input-branching programs. Frozen target:
+  `tests/editor_state_vectors.json`. See `evidence/m2_state/GATES.md`.
 
 ## Core contract (frozen)
 

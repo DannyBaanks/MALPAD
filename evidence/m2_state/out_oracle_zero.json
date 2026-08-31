@@ -1,0 +1,6 @@
+{
+  "output": "0",
+  "halted": true,
+  "steps": 136,
+  "halt_reason": "halt_opcode"
+}
