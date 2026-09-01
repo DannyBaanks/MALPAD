@@ -8,6 +8,8 @@ NOT_DEMONSTRATED. This is data, recorded honestly.
 """
 from __future__ import annotations
 
+import os
+
 import sys
 from pathlib import Path
 
@@ -19,7 +21,8 @@ ID_MAL = ROOT / "evidence" / "mutable_cell" / "input_driven.mal"
 
 def _oracle(inp, prog=None):
     import sys as _s
-    d = r"C:\Development\ISyCo Git\malbolge-oracle"
+    d = os.environ.get("MALPAD_ORACLE_DIR",
+        r"C:\Development\ISyCo Git\malbolge-oracle")
     if d not in _s.path:
         _s.path.insert(0, d)
     from oracle import Oracle
@@ -31,7 +34,8 @@ def _oracle(inp, prog=None):
 
 def _engine(inp, prog=None):
     import subprocess, json
-    exe = r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe"
+    exe = os.environ.get("MALPAD_ENGINE_EXE",
+        r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe")
     if not Path(exe).exists():
         pytest.skip("malbolge-engine not present")
     p = subprocess.Popen([exe], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)

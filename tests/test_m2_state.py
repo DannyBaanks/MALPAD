@@ -8,6 +8,8 @@ editor_state_vectors.json (produced by the M0 IR oracle).
 """
 from __future__ import annotations
 
+import os
+
 import json
 from pathlib import Path
 
@@ -23,7 +25,8 @@ def _tm_source() -> str:
 
 def _oracle(inp, steps=2000):
     import sys
-    d = r"C:\Development\ISyCo Git\malbolge-oracle"
+    d = os.environ.get("MALPAD_ORACLE_DIR",
+        r"C:\Development\ISyCo Git\malbolge-oracle")
     if d not in sys.path:
         sys.path.insert(0, d)
     from oracle import Oracle
@@ -35,7 +38,8 @@ def _oracle(inp, steps=2000):
 
 def _engine(inp, steps=2000):
     import subprocess, json
-    exe = r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe"
+    exe = os.environ.get("MALPAD_ENGINE_EXE",
+        r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe")
     if not Path(exe).exists():
         pytest.skip("malbolge-engine not present")
     p = subprocess.Popen([exe], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)

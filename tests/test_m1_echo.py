@@ -6,6 +6,7 @@ Malbolge-Engine are the two independent 3^10 backends that feed input.
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import pytest
@@ -20,7 +21,10 @@ def _cat_source() -> str:
 def _engine_echo(input_s, steps=5000):
     import subprocess, json
     src = _cat_source()
-    exe = r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe"
+    exe = os.environ.get(
+        "MALPAD_ENGINE_EXE",
+        r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe",
+    )
     if not Path(exe).exists():
         pytest.skip("malbolge-engine not present")
     p = subprocess.Popen([exe], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
@@ -35,7 +39,10 @@ def _engine_echo(input_s, steps=5000):
 
 def _oracle_echo(input_s, steps=5000):
     import sys
-    d = r"C:\Development\ISyCo Git\malbolge-oracle"
+    d = os.environ.get(
+        "MALPAD_ORACLE_DIR",
+        r"C:\Development\ISyCo Git\malbolge-oracle",
+    )
     if not Path(d).is_dir():
         pytest.skip("malbolge-oracle not present")
     if d not in sys.path:

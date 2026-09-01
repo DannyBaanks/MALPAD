@@ -13,14 +13,21 @@ Python MUST NOT translate protocol bytes -> editor state.
 """
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List, Optional
 
-ENGINE_EXE = r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe"
-ORACLE_DIR = r"C:\Development\ISyCo Git\malbolge-oracle"
+ENGINE_EXE = os.environ.get(
+    "MALPAD_ENGINE_EXE",
+    r"C:\Development\ISyCo Git\Malbolge-Engine\malbolge-ipc.exe",
+)
+ORACLE_DIR = os.environ.get(
+    "MALPAD_ORACLE_DIR",
+    r"C:\Development\ISyCo Git\malbolge-oracle",
+)
 
 FRAME = "@MALPAD:"
 
